@@ -23,18 +23,24 @@ This script is used for determining the dominant orientations of strokes present
 
 #### Step 1: Run `wrinkling_1img.m`
 
+<img src="images/1-edge.png" width="75%" align="middle">
+
 ![](images/1-edge.png)
+
 Find edges using the Canny operator
 
 ![](images/1-drawedgelist.png)
+
 Discard contours less than 10 pixels long, and construct the image with the fitted line segments
 
 ![](images/1-histogram.png)
+
 Calculate the length and angle of each segment and generate a histogram showing the amount of segments in a given angle. In this example, the histogram shows peaks center at 30°~50°, 110°~140°, and 170°~5°.
 
 **Note: the angle is measured clockwise from the horizontal line.
 
 ![](images/1-highlight.png)
+
 Hightlight edges with particular angles: red: 30°~50° , green: 110°~140°, and blue: 170°~5°
 
 

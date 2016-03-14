@@ -76,11 +76,11 @@ Running `wrinkling_1img.m` without changing parameters yields the default input 
 ###Two images
 
 #### Step 0: Prepare two images
-![](images/Square.jpg)
 image1
-
-![](images/Square90.jpg)
+<img src="images/square.jpg" width=215px>
 image2
+<img src="images/square90.jpg" height=225px>
+
 
 #### Step 1: Run `wrinkling_2img.m`
 Calculate the histogram2 of image2.

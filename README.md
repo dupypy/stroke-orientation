@@ -77,9 +77,9 @@ Running `wrinkling_1img.m` without changing parameters yields the default input 
 
 #### Step 0: Prepare two images
 image1
-<img src="images/square.jpg" width=215px>
+<img src="images/Square.jpg" width=215px>
 image2
-<img src="images/square90.jpg" height=225px>
+<img src="images/Square90.jpg" height=225px>
 
 
 #### Step 1: Run `wrinkling_2img.m`

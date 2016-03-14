@@ -1,4 +1,4 @@
-function [thetas, lens, image_info] = stats(filename)
+function [thetas, lens, image_info] = stats(filename, minlength, tol)
 
 original = imread(filename);
 im = rgb2gray(original);
@@ -15,18 +15,16 @@ edgeim = edge(im,'canny');
 % list for each edge contour. A contour/edgelist starts/stops at an
 % ending or a junction with another contour/edgelist.
 % Here we discard contours less than 10 pixels long.
-[edgelist] = edgelink(edgeim, 10);
+[edgelist] = edgelink(edgeim, minlength);
 
 % Display the edgelists with random colours for each distinct edge
 % in figure 2
 
 %drawedgelist(edgelist, size(im), 1, 'rand', 2); axis off
 
-
-
 % Fit line segments to the edgelists
-tol = 2;         % Line segments are fitted with maximum deviation from
-     % original edge of 2 pixels.
+% Line segments are fitted with maximum deviation from
+     
 seglist = lineseg(edgelist, tol);
 
 

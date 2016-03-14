@@ -22,7 +22,7 @@ imshow(edgeim);
 % Draw the fitted line segments stored in seglist in figure window 3 with
 % a linewidth of 2 and random colours
 figure('position', [0, 0, imWidth, imHeight]);
-drawedgelist(seglist, size(im), 2, [0 0 1], 3); 
+drawedgelist(seglist, size(im), 2, [0 0 1]); 
 axis off
 
 % Hightlight edges with particular angles

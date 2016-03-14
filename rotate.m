@@ -1,4 +1,4 @@
-function newthetas = rotate(thetas, angle)
+function newthetas = rotate(thetas, rotate_angle)
 
-newthetas = mod(thetas - angle, 180);
+newthetas = mod(thetas - rotate_angle, 180);
 end

@@ -17,6 +17,8 @@ This script is used for determining the dominant orientations of strokes present
 ## Usage and Examples
 ###Single image
 
+!!!ADD DESCRIPTIONS!!!
+
 #### Step 0: Prepare an image
 
 ![](images/1.jpg)
@@ -24,6 +26,8 @@ This script is used for determining the dominant orientations of strokes present
 #### Step 1: Run `wrinkling_1img.m`
 
 <div style="text-align:center"><img src="images/1-edge.png" width="60%"></div>
+
+
 
 Find edges using the Canny operator
 
@@ -46,13 +50,10 @@ Running `wrinkling_1img.m` without changing parameters yields the default input 
 
 * `image`: input image file name
 
-* `edgeim = edge(im, 'canny', threshold, sigma)`:
+* `minlength`:
 
-  adjust `threshold` and `simga` in `stats.m`. The default values of high threshold is 0.2, low threshold is 0.1, and sigma is 1
+  The script will discard the contour shorter than the value you set (measured in pixels, default value = 10).
 
-* `[edgelist, labeledge] = edgelink(edgeim, low_pixel)`:
-
-  adjust `low\_pixel` in `stats.m`. The script will discard the contour shorter than the value you set (measured in pixels, default value = 10).
 * `tol`:
 
   adjust `tol` in `stats.m`. `tol` is the maximum deviation from straight line before a segment is broken in two (measured in pixels, default = 2)
@@ -73,8 +74,6 @@ Running `wrinkling_1img.m` without changing parameters yields the default input 
 
  adjust `color` in `wrinkling_1img.m`. specify color for each highlighted contour set (number of colors should be the same as the number of bounds)
 
-* `drawedgelist(seglist, size(im), 2, [0 0 1], 3)`:
- adjust in `showimage.m`.
 
 
 ###Two images

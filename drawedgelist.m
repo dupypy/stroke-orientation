@@ -112,7 +112,7 @@ function h = drawedgelist(edgelist, rowscols, lw, col, figno, mid)
 	maxy = max(max(edgelist{I}(:,1)),maxy);	
     end	    
 
-    axis('equal'); axis('ij');
+    %axis('equal'); axis('ij');
     axis([minx maxx miny maxy]);
     
     if nargout == 0

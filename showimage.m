@@ -25,6 +25,7 @@ figure('position', [0, 0, imWidth, imHeight]);
 drawedgelist(seglist, size(im), 2, [0 0 1]); 
 axis off
 
+
 % Hightlight edges with particular angles
 if isfield(options, 'angle_bound')
     figure('position', [0, 0, imWidth, imHeight]);
@@ -54,8 +55,8 @@ if isfield(options, 'angle_bound')
         hold on
     end
     
-    axis('equal'); 
-    axis('ij');
+    %axis('equal'); 
+    %axis('ij');
     axis('off');
     camroll(0);
     

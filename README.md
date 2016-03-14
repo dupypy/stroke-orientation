@@ -23,9 +23,7 @@ This script is used for determining the dominant orientations of strokes present
 
 #### Step 1: Run `wrinkling_1img.m`
 
-<img src="images/1-edge.png" width="75%" align="middle">
-
-![](images/1-edge.png)
+<center><img src="images/1-edge.png" width="60%"></center>
 
 Find edges using the Canny operator
 

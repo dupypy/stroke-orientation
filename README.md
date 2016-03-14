@@ -27,11 +27,14 @@ This script is used for determining the dominant orientations of strokes present
 
 <div style="text-align:center"><img src="images/1-edge.png" width="60%"></div>
 
-
-
 Find edges using the Canny operator
 
-![](images/1-drawedgelist.png)
+
+<p align="center">
+  <img src="images/1-drawedgelist.png" width="60%">
+</p>
+
+
 
 Discard contours less than 10 pixels long, and construct the image with the fitted line segments
 

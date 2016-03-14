@@ -21,32 +21,26 @@ This script is used for determining the dominant orientations of strokes present
 
 #### Step 0: Prepare an image
 
-![](images/1.jpg)
+<img src="images/1.jpg" width="40%">
 
 #### Step 1: Run `wrinkling_1img.m`
 
-<div style="text-align:center"><img src="images/1-edge.png" width="60%"></div>
 
 Find edges using the Canny operator
 
-
-<p align="center">
-  <img src="images/1-drawedgelist.png" width="60%">
-</p>
-
-
+<img src="images/1-edge.png" width="40%">
 
 Discard contours less than 10 pixels long, and construct the image with the fitted line segments
 
-![](images/1-histogram.png)
+<img src="images/1-drawedgelist.png" width="40%">
 
-Calculate the length and angle of each segment and generate a histogram showing the amount of segments in a given angle. In this example, the histogram shows peaks center at 30°~50°, 110°~140°, and 170°~5°.
+Calculate the length and angle of each segment and generate a histogram showing the amount of segments in a given angle. In this example, the histogram shows peaks center at 30°~50°, 110°~140°, and 170°~5°. **Note: the angle is measured clockwise from the horizontal line.
 
-**Note: the angle is measured clockwise from the horizontal line.
-
-![](images/1-highlight.png)
+<img src="images/1-histogram.png" width="43%">
 
 Hightlight edges with particular angles: red: 30°~50° , green: 110°~140°, and blue: 170°~5°
+
+<img src="images/1-highlight.png" width="40%">
 
 
 Running `wrinkling_1img.m` without changing parameters yields the default input image and settings. You can change the values for the following parameters:

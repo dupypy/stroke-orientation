@@ -63,16 +63,8 @@ Running `wrinkling_1img.m` without changing parameters yields the default input 
 
 First prepare two images which you are interested in studying the difference in orientaton distribution.
 
-<div style="display:flex">
-<div style="text-align:center; padding-right: 20px">
-image 1<br/>
-<img src="images/Square.jpg" width=215px>
-</div>
-<div style="text-align:center">
-image 2</br>
+<img src="images/Square.jpg" width=215px style="padding-right: 10px">
 <img src="images/Square90.jpg" height=225px>
-</div>
-</div>
 
 Run `wrinkling_2img.m`. The script will execute in the following order:
 

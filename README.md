@@ -1,6 +1,6 @@
 # Analyzing Stroke Orientation in Images
 
-This script is used for determining the dominant orientations of strokes present in an input image. It constructs a histogram showing the amount of strokes in a given orientation. It can also identify if the two input images are taken at different locations on the same sample by comparing their histograms.
+This script is used for determining the dominant orientations of strokes present in an input image. It constructs a histogram showing the amount of strokes in a given orientation. It can also identify if the two input images are taken at different locations on the same sample by comparing the two histograms.
 
 ## Requirement
 
@@ -17,95 +17,80 @@ This script is used for determining the dominant orientations of strokes present
 ## Usage and Examples
 ###Single image
 
-!!!ADD DESCRIPTIONS!!!
-
-#### Step 0: Prepare an image
+First prepare an image 
 
 <img src="images/1.jpg" width="40%">
 
-#### Step 1: Run `wrinkling_1img.m`
-
-
-Find edges using the Canny operator
+Then Run `wrinkling_1img.m`. The outlines were detected by the Canny edge detection method 
 
 <img src="images/1-edge.png" width="40%">
 
-Discard contours less than 10 pixels long, and construct the image with the fitted line segments
+The script discarded contours less than 10 pixels long, and fitted the contours with discrete line segments. Below shows the image constructed by 
+the fitted line segments.
 
 <img src="images/1-drawedgelist.png" width="40%">
 
-Calculate the length and angle of each segment and generate a histogram showing the amount of segments in a given angle. In this example, the histogram shows peaks center at 30°~50°, 110°~140°, and 170°~5°. **Note: the angle is measured clockwise from the horizontal line.
+The script then calculated the length and angle of each segment and generate a histogram showing the amount of segments in a given angle. In this example, the strokes exist in 3 populations: one with an orientation at about 45°, one at about 120°, and the other one at around 0°. **Note: the angle is reported clockwise from the horizontal line.
 
 <img src="images/1-histogram.png" width="43%">
 
-Hightlight edges with particular angles: red: 30°~50° , green: 110°~140°, and blue: 170°~5°
+Lastly, an optional image hightlights the strokes with the dominant angles in different colors: red: 30°~50° , green: 110°~140°, and blue: 170°~5°
 
 <img src="images/1-highlight.png" width="40%">
 
 
 Running `wrinkling_1img.m` without changing parameters yields the default input image and settings. You can change the values for the following parameters:
 
-* `image`: input image file name
+* `-image`: Input image file name
 
-* `minlength`:
+* `-minlength`: Minimum edge length of interest (measured in pixels). Default is 10.
 
-  The script will discard the contour shorter than the value you set (measured in pixels, default value = 10).
+* `tol`: Maximum deviation from straight line before a segment is broken in two (measured in pixels). Default is 2.
 
-* `tol`:
+* `-rotate_angle`: Angle of rotation in a clockwise direction. Defalt is 0°.
 
-  adjust `tol` in `stats.m`. `tol` is the maximum deviation from straight line before a segment is broken in two (measured in pixels, default = 2)
+* `-nbins`: Number of intervals. Default nbins is 30 when setting nbins 0 or nargin is equal to 2. 
+ 
+* `-bound`: A 2 elements array. Specify the lower and upper limits of the bin. Default value is [0 180]
 
-* `newthetas = rotate(thetas, rotate_angle)`:
+* `-options.angle_bound`: Populations of dominant orientation to highlight from the original histogram, can be as many ranges as needed.
 
-  adjust `rotate_angle` in `wrinkling_1img.m`.  Rotate image by `rotate_angle` degrees in a clockwise direction. `rotate_angle` is set to 0 when not rotating the image
-
-* `[histw, intervals] = histwc(newthetas, lens, nbins, bound)`:
-
- adjust `nbins` and `bound` in `wrinkling_1img.m`. `nbins` is number of bins, default nbins is 30 when setting nbins 0 or nargin is equal to 2. `bound` is a 2 elements array, specify the lower and upper limits of the bin, default value is [0 180]
-
-* `options.angle_bound = [ang1 ang2; ang3 ang4; ang5 ang6]`:
-
- adjust `ang` in `wrinkling_1img.m`. specify bounds to highlight from the original histogram (can be as many ranges as needed)
-
-* `options.color = ['color1', 'color2', 'color3']`:
-
- adjust `color` in `wrinkling_1img.m`. specify color for each highlighted contour set (number of colors should be the same as the number of bounds)
+* `-options.color`: Colors highlighted for each population. The number of colors should be the same as the number of bounds.
 
 
 
 ###Two images
 
-#### Step 0: Prepare two images
-image1
+First prepare two images which you are interested in studying the difference in orientaton distribution.
+
+<div style="display:flex">
+<div style="text-align:center; padding-right: 20px">
+image 1<br/>
 <img src="images/Square.jpg" width=215px>
-image2
+</div>
+<div style="text-align:center">
+image 2</br>
 <img src="images/Square90.jpg" height=225px>
+</div>
+</div>
 
+Run `wrinkling_2img.m`. The script will execute in the following order:
 
-#### Step 1: Run `wrinkling_2img.m`
-Calculate the histogram2 of image2.
+1. Calculate the histogram2 of image2.
 
-Fix image2 as reference and rotate image1 from 0° to 179°.
+2. Fix image2 as reference and rotate image1 from 0° to 179°.
 
-Calculate the histogram1 of image1 at each rotated angle.
+3. Calculate the histogram1 of image1 at each rotated angle.
 
-Compute Kullback-Leibler divergence of histogram2 and histogram1 at each rotated angle.
+4. Compute Kullback-Leibler divergence of histogram2 and histogram1 at each rotated angle.
 
-Show the value of **minumum divergence (mindist)** and its corresponding **rotated angle (bestangle)** as output.
-
-In this example, the bestange is 90° and the mindist is 0.0015.
+5. Show the value of **minumum KL Divergence (mindist)** and its corresponding **rotated angle (bestangle)** as output.
 
 ### Output:
 
 ```
-mindist =
-
-    0.0015
-
-
-bestangle =
-
-    90
+The minimum KL Divergence is 0.001472
+The alignment angle is 90 degrees
 ```
 
 ## Files

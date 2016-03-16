@@ -10,7 +10,6 @@ tol1 = 2;
 tol2 = 2;
 nbins = 30;
 bound = [0 180];
-plot_option = ''  % both, none, image1, image2
 options.angle_bound = [0 20];  
 options.color = ['r'];
 
@@ -35,9 +34,8 @@ for rot_angle = 0:179
     end
 end
 
+fprintf('The alignment angle is %d degrees\n', bestangle)
 fprintf('The minimum KL Divergence is %f\n', mindist)
-fprintf('The rotated angle is %d\\circ\n', bestangle)
 
-if sctr
-showimage(thetas1, image_info1, options);
-showhist(intervals, matchhist);
+%showimage(thetas1, image_info1, options);
+%showhist(intervals, matchhist);

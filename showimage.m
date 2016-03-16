@@ -16,19 +16,27 @@ lines = image_info.lines;
 figure
 imshow(original);
 
-figure('position', [0, 0, imWidth, imHeight]); 
+figure
 imshow(edgeim);
 
 % Draw the fitted line segments stored in seglist in figure window 3 with
 % a linewidth of 2 and random colours
-figure('position', [0, 0, imWidth, imHeight]);
-drawedgelist(seglist, size(im), 2, [0 0 1]); 
+%figure('position', [0, 0, imWidth, imHeight]);
+figure
+white_image_base = im;
+white_image_base(:) = 255;
+imshow(white_image_base);
+hold on
+drawedgelist(seglist, size(im), 2, [0 0 1]);
+hold off
 axis off
 
 
 % Hightlight edges with particular angles
 if isfield(options, 'angle_bound')
-    figure('position', [0, 0, imWidth, imHeight]);
+    figure
+    imshow(white_image_base);
+    hold on
     angleset = size(options.angle_bound, 1);
     
    
@@ -54,9 +62,9 @@ if isfield(options, 'angle_bound')
         plot(curline([1 3]), curline([2 4]), '-', 'Color', linecolor, 'linewidth', 2);
         hold on
     end
-    
-    %axis('equal'); 
-    %axis('ij');
+    hold off
+    axis('image');
+    axis('ij');
     axis('off');
     camroll(0);
     

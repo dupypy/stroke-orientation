@@ -39,7 +39,7 @@ Lastly, an optional image hightlights the strokes with the dominant angles in di
 
 Running `wrinkling_1img.m` without changing parameters yields the default input image and settings. You can change the values for the following parameters:
 
-```
+```Matlab
 % Input image file name
 image = 'images/1.jpg';
 
@@ -120,7 +120,7 @@ The minimum KL Divergence is 0.001472
      * `rotate.m`
      * `KLDiv.m`
 
-##Credits
+##References and Credits
 
 * The following m files are from  Prof. Peter Kovesi's website: 
 
@@ -130,7 +130,7 @@ The minimum KL Divergence is 0.001472
   `maxlinedev.m`
   `drawedgelist.m`
   
-Peter Kovesi.  MATLAB and Octave Functions for Computer Vision and Image Processing.
+  Peter Kovesi.  MATLAB and Octave Functions for Computer Vision and Image Processing.
 Available from:
 <http://www.peterkovesi.com/matlabfns/>
 
@@ -142,6 +142,9 @@ Available from:
   
 * Thanks to Yu-Cheng Chen and Han-Yu Hsueh for providing images.
 * Specical thanks to Steve Li for his help and constructive discussion.
+
+
+
 
 
 

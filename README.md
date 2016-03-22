@@ -81,13 +81,9 @@ First prepare two images to align with each other
 Run `wrinkling_2img.m`. The script will execute in the following order:
 
 1. Calculate the histogram2 of image2.
-
 2. Fix image2 as reference and rotate image1 from 0° to 179°.
-
 3. Calculate the histogram1 of image1 at each rotated angle.
-
 4. Compute Kullback-Leibler divergence of histogram2 and histogram1 at each rotated angle.
-
 5. Show the value of **minumum aligned KL divergence** and its corresponding **alignment angle** as output.
 
 ### Output:
@@ -136,10 +132,8 @@ Available from:
 
 * The `histwc.m` is modified from the source code written by Mehmet Suzen 
 <http://goo.gl/j8tAZD>
-
 * The `KLDiv.m` is modified from the source code written by Nima Razavi
 <http://goo.gl/pTa86F>
-  
 * Thanks to Yu-Cheng Chen and Han-Yu Hsueh for providing images.
 * Specical thanks to Steve Li for his help and constructive discussion.
 

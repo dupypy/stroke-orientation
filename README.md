@@ -105,7 +105,6 @@ The minimum KL Divergence is 0.001472
      * `showhist.m`
      * `showimage.m`
         * `drawedgelist.m`
-
 - `wrinkling_2img.m`
      * `stats.m`
         * `edgelink.m`
@@ -119,27 +118,18 @@ The minimum KL Divergence is 0.001472
 ##References and Credits
 
 * The following m files are from  Prof. Peter Kovesi's website: 
-
-  `edgelink.m`
-  `findendsjunctions.m`
-  `lineseg.m`
-  `maxlinedev.m`
-  `drawedgelist.m`
+  * `edgelink.m`
+  * `findendsjunctions.m`
+  * `lineseg.m`
+  * `maxlinedev.m`
+  * `drawedgelist.m`
   
   Peter Kovesi.  MATLAB and Octave Functions for Computer Vision and Image Processing.
-Available from:
-<http://www.peterkovesi.com/matlabfns/>
-
+  Available from:
+  <http://www.peterkovesi.com/matlabfns/>
 * The `histwc.m` is modified from the source code written by Mehmet Suzen 
-<http://goo.gl/j8tAZD>
+  <http://goo.gl/j8tAZD>
 * The `KLDiv.m` is modified from the source code written by Nima Razavi
-<http://goo.gl/pTa86F>
+  <http://goo.gl/pTa86F>
 * Thanks to Yu-Cheng Chen and Han-Yu Hsueh for providing images.
 * Specical thanks to Steve Li for his help and constructive discussion.
-
-
-
-
-
-
-

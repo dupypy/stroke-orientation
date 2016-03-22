@@ -86,7 +86,7 @@ Run `wrinkling_2img.m`. The script will execute in the following order:
 4. Compute Kullback-Leibler divergence of histogram2 and histogram1 at each rotated angle.
 5. Show the value of **minumum aligned KL divergence** and its corresponding **alignment angle** as output.
 
-### Output:
+#### Output:
 
 ```
 The alignment angle is 90 degrees

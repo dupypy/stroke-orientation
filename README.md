@@ -14,7 +14,7 @@ This script is used for determining the dominant orientations of strokes present
 
 
 ## Usage and Examples
-###Single image
+### Single image
 
 First prepare an image 
 
@@ -32,7 +32,7 @@ The script then calculates the length and angle of each segment and generate a h
 
 <img src="images/1-histogram.png" width="43%">
 
-Lastly, an optional image hightlights the strokes with the dominant angles in different colors: red: 30°~50° , green: 110°~140°, and blue: 170°~5°
+Lastly, an optional image hightlights the strokes with the dominant angles in different colors: red: 30°\~50° , green: 110°\~140°, and blue: 170°\~5°
 
 <img src="images/1-highlight.png" width="40%">
 
@@ -71,7 +71,7 @@ options.color = ['r', 'g', 'b'];
 ```
 
 
-###Two images
+### Two images
 
 First prepare two images to align with each other 
 
@@ -115,7 +115,7 @@ The minimum KL Divergence is 0.001472
      * `rotate.m`
      * `KLDiv.m`
 
-##References and Credits
+## References and Credits
 
 * The following m files are from  Prof. Peter Kovesi's website: 
   * `edgelink.m`
